@@ -14,7 +14,7 @@ domain=$IP
 fi
 tr="$(cat ~/log-install.txt | grep -i Trojan | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
-		Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+		read -rp "Password: " -e trial
 		user_EXISTS=$(grep -w $user /etc/trojan/akun.conf | wc -l)
 
 		if [[ ${user_EXISTS} == '1' ]]; then
@@ -23,9 +23,11 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
 			exit 1
 		fi
 	done
-hari="1"
+  hari="1"
+read -p "Expired (days): " masaaktif
 sed -i '/"'""$uuid""'"$/a\,"'""$user""'"' /etc/trojan/config.json
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
+read -p "BUG TELCO: " BUG
 echo -e "### $user $exp" >> /etc/trojan/akun.conf
 systemctl restart trojan
 trojanlink="trojan://${user}@${domain}:${tr}?sni=$BUG&${user}"
