@@ -38,10 +38,14 @@ sed -i 's/#net.ipv4.ip_forward=1/net.ipv4.ip_forward=1/g' /etc/sysctl.conf
 
 # Buat config client TCP 1194
 cat > /etc/openvpn/client-tcp-1194.ovpn <<-END
+setenv CLIENT_CERT 0
+setenv FRIENDLY_NAME "nama file"
 client
 dev tun
 proto tcp
-remote xxxxxxxxx 1194
+setenv FRIENDLY_NAME "DIGIFREEZE"
+remote dot.tiar.app.com.${DOMAIN}:1194@LETAK BUG/
+http-proxy ${IPVPS} 8080
 resolv-retry infinite
 route-method exe
 nobind
@@ -50,16 +54,23 @@ persist-tun
 auth-user-pass
 comp-lzo
 verb 3
+dhcp-option DNS 8.8.8.8
+dhcp-option DNS 8.8.4.4
+
 END
 
 sed -i $MYIP2 /etc/openvpn/client-tcp-1194.ovpn;
 
 # Buat config client UDP 2200
 cat > /etc/openvpn/client-udp-2200.ovpn <<-END
+setenv CLIENT_CERT 0
+setenv FRIENDLY_NAME "nama file"
 client
 dev tun
-proto udp
-remote xxxxxxxxx 2200
+proto tcp
+setenv FRIENDLY_NAME "DIGIFREEZE"
+remote dot.tiar.app.com.${DOMAIN}:2200@LETAK BUG/
+http-proxy ${IPVPS} 8080
 resolv-retry infinite
 route-method exe
 nobind
@@ -68,16 +79,23 @@ persist-tun
 auth-user-pass
 comp-lzo
 verb 3
+dhcp-option DNS 8.8.8.8
+dhcp-option DNS 8.8.4.4
+
 END
 
 sed -i $MYIP2 /etc/openvpn/client-udp-2200.ovpn;
 
 # Buat config client SSL
 cat > /etc/openvpn/client-tcp-ssl.ovpn <<-END
+setenv CLIENT_CERT 0
+setenv FRIENDLY_NAME "nama file"
 client
 dev tun
 proto tcp
-remote xxxxxxxxx 442
+setenv FRIENDLY_NAME "DIGIFREEZE"
+remote dot.tiar.app.com.${DOMAIN}:442@LETAK BUG/
+http-proxy ${IPVPS} 8080
 resolv-retry infinite
 route-method exe
 nobind
@@ -86,6 +104,9 @@ persist-tun
 auth-user-pass
 comp-lzo
 verb 3
+dhcp-option DNS 8.8.8.8
+dhcp-option DNS 8.8.4.4
+
 END
 
 sed -i $MYIP2 /etc/openvpn/client-tcp-ssl.ovpn;

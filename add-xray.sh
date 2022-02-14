@@ -32,8 +32,8 @@ sed -i '/#XRay$/a\### '"$user $exp"'\
 sed -i '/#XRay$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","flow": "xtls-rprx-splice","email": "'""$user""'"' /etc/xray-mini/vless-splice.json
 
-vless_direct="vless://${uuid}@${domain}:${vless1}?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-direct&sni=bug.com#$user"
-vless_splice="vless://${uuid}@${domain}:${vless1}?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=bug.com#$user"
+vless_direct="vless://${uuid}@${domain}:${vless1}?security=xtls&encryption=none&headerType=none&hotype=tcp&flow=xtls-rprx-direct&sni=${BUG}#$user"
+vless_splice="vless://${uuid}@${domain}:${vless1}?security=xtls&encryption=none&headerType=none&type=tcp&flow=xtls-rprx-splice&sni=${BUG}#$user"
 
 # // Restarting Service
 systemctl stop xray-mini@vless-direct
