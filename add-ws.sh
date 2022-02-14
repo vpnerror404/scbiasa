@@ -33,7 +33,7 @@ sed -i '/#none$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"0"',"email": "'""$user""'"' /etc/v2ray/none.json
 cat>/etc/v2ray/$user-tls.json<<EOF
       {
-      "v": "2",
+      "v": "0",
       "ps": "${user}",
       "add": "${domain}",
       "port": "${tls}",
@@ -48,7 +48,7 @@ cat>/etc/v2ray/$user-tls.json<<EOF
 EOF
 cat>/etc/v2ray/$user-none.json<<EOF
       {
-      "v": "2",
+      "v": "0",
       "ps": "${user}",
       "add": "${domain}",
       "port": "${none}",
@@ -76,7 +76,7 @@ echo -e "Domain         : ${domain}"
 echo -e "port TLS       : ${tls}"
 echo -e "port none TLS  : ${none}"
 echo -e "id             : ${uuid}"
-echo -e "alterId        : 2"
+echo -e "alterId        : 0"
 echo -e "Security       : auto"
 echo -e "network        : ws"
 echo -e "path           : /v2ray"

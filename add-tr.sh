@@ -29,7 +29,7 @@ exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 read -p "BUG TELCO: " BUG
 echo -e "### $user $exp" >> /etc/trojan/akun.conf
 systemctl restart trojan
-trojanlink="trojan://${user}@${domain}:${tr}?sni=${BUG}"
+trojanlink="trojan://${user}@${domain}:${tr}?sni=$BUG&${user}"
 clear
 echo -e ""
 echo -e "=============-Trojan-============"
