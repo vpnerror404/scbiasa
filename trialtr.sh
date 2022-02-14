@@ -14,7 +14,7 @@ domain=$IP
 fi
 tr="$(cat ~/log-install.txt | grep -i Trojan | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
-		read -rp "Password: " -e trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
+		Login=trial`</dev/urandom tr -dc X-Z0-9 | head -c4`
 		user_EXISTS=$(grep -w $user /etc/trojan/akun.conf | wc -l)
 
 		if [[ ${user_EXISTS} == '1' ]]; then

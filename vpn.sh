@@ -44,8 +44,8 @@ client
 dev tun
 proto tcp
 setenv FRIENDLY_NAME "DIGIFREEZE"
-remote dot.tiar.app.com.${DOMAIN}:1194@LETAK BUG/
-http-proxy ${IPVPS} 8080
+remote dot.tiar.app.com.$domain:1194@LETAK BUG/
+http-proxy $IPVPS 8080
 resolv-retry infinite
 route-method exe
 nobind
@@ -69,8 +69,8 @@ client
 dev tun
 proto tcp
 setenv FRIENDLY_NAME "DIGIFREEZE"
-remote dot.tiar.app.com.${DOMAIN}:2200@LETAK BUG/
-http-proxy ${IPVPS} 8080
+remote dot.tiar.app.com.$DOMAIN:2200@LETAK BUG/
+http-proxy $IPVPS 8080
 resolv-retry infinite
 route-method exe
 nobind
@@ -94,8 +94,8 @@ client
 dev tun
 proto tcp
 setenv FRIENDLY_NAME "DIGIFREEZE"
-remote dot.tiar.app.com.${DOMAIN}:442@LETAK BUG/
-http-proxy ${IPVPS} 8080
+remote dot.tiar.app.com.$DOMAIN:442@LETAK BUG/
+http-proxy $IPVPS 8080
 resolv-retry infinite
 route-method exe
 nobind
