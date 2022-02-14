@@ -25,6 +25,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 	done
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
+read -p "BUG TELCO: " BUG
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 sed -i '/#tls$/a\### '"$user $exp"'\
 },{"id": "'""$uuid""'","alterId": '"2"',"email": "'""$user""'"' /etc/v2ray/config.json
@@ -41,7 +42,7 @@ cat>/etc/v2ray/$user-tls.json<<EOF
       "net": "ws",
       "path": "/v2ray",
       "type": "none",
-      "host": "",
+      "host": "{BUG}",
       "tls": "tls"
 }
 EOF
@@ -56,7 +57,7 @@ cat>/etc/v2ray/$user-none.json<<EOF
       "net": "ws",
       "path": "/v2ray",
       "type": "none",
-      "host": "",
+      "host": "{BUG}",
       "tls": "none"
 }
 EOF

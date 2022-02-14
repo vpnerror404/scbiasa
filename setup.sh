@@ -24,7 +24,7 @@ echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
 echo "$host" >> /etc/v2ray/domain
 echo "$host" >> /root/domain
 echo "V1.0" >> /home/version
-echo "@Adamvpn" >> /home/contact
+echo "@rahsia" >> /home/contact
 wget https://raw.githubusercontent.com/vpnerror404/scbiasa/main/cf.sh && chmod +x cf.sh && ./cf.sh
 #install ssh ovpn
 wget https://raw.githubusercontent.com/vpnerror404/scbiasa/main/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn ./ssh-vpn.sh
@@ -71,8 +71,7 @@ wget -O /etc/set.sh "https://raw.githubusercontent.com/vpnerror404/scbiasa/main/
 chmod +x /etc/set.sh
 history -c
 echo "1.2" > /home/ver
-echo "echo '             Menu Style by @ADAMVPN            '" >> .profile
-echo "echo '             Repaired by @harithwyd            '" >> .profile
+echo "echo '             Menu Style by @naimvpn            '" >> .profile
 clear
 echo " "
 echo "DAH SIAP BOSS!!"
@@ -119,13 +118,13 @@ echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "   - Dev/Main                : info_android9"  | tee -a log-install.txt
-echo "   - Modded by               : info_android9"  | tee -a log-install.txt
-echo "   - Telegram                : t.me/info_android9"  | tee -a log-install.txt
+echo "   - Dev/Main                : naimstore"  | tee -a log-install.txt
+echo "   - Modded by               : naimstore"  | tee -a log-install.txt
+echo "   - Telegram                : t.me/naimstore"  | tee -a log-install.txt
 echo "   - Instagram               : Rahsia sayang"  | tee -a log-install.txt
-echo "   - Whatsapp                : 0128266472"   | tee -a log-install.txt
+echo "   - Whatsapp                : bahsia laa"   | tee -a log-install.txt
 echo "   - Facebook                : Rahsia sayang" | tee -a log-install.txt
-echo "------------------Script Created By info_android9-----------------" | tee -a log-install.txt
+echo "------------------Script Created By naimstore-----------------" | tee -a log-install.txt
 echo ""
 echo " Reboot 20 Sec"
 sleep 15

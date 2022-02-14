@@ -23,6 +23,7 @@ until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 
 uuid=$(cat /proc/sys/kernel/random/uuid)
 read -p "Expired (days): " masaaktif
+read -p "BUG TELCO: " BUG
 exp=`date -d "$masaaktif days" +"%Y-%m-%d"`
 
 # // Input To Server
