@@ -1,6 +1,6 @@
 #!/bin/bash
 # XRay Installation
-# Coded By harithwyd
+# Coded By naikstore
 apt update -y
 apt upgrade -y
 apt install socat -y
@@ -12,11 +12,11 @@ apt install nano -y
 apt install python3 -y
 
 # // Make Main Directory
-mkdir -p /usr/local/harithwyd/
+mkdir -p /usr/local/naikstore/
 
 # // Installation XRay Core
-wget -q -O /usr/local/harithwyd/xray-mini "https://raw.githubusercontent.com/vpnerror404/scbiasa/main/xray-mini"
-chmod +x /usr/local/harithwyd/xray-mini
+wget -q -O /usr/local/naikstore/xray-mini "https://raw.githubusercontent.com/vpnerror404/scbiasa/main/xray-mini"
+chmod +x /usr/local/naikstore/xray-mini
 
 # // Make XRay Mini Root Folder
 mkdir -p /etc/xray-mini/
@@ -32,7 +32,7 @@ After=network.target nss-lookup.target
 [Service]
 User=root
 NoNewPrivileges=true
-ExecStart=/usr/local/harithwyd/xray-mini -config /etc/xray-mini/%i.json
+ExecStart=/usr/local/naikstore/xray-mini -config /etc/xray-mini/%i.json
 Restart=on-failure
 RestartPreventExitStatus=23
 LimitNPROC=10000

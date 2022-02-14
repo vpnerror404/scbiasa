@@ -51,6 +51,7 @@ echo -e "OpenVPN             : TCP $ovpn http://${domain}:81/client-tcp-$ovpn.ov
 echo -e "OpenVPN             : UDP $ovpn2 http://${domain}:81/client-udp-$ovpn2.ovpn"
 echo -e "OpenVPN             : SSL 442 http://${domain}:81/client-tcp-ssl.ovpn"
 echo -e "badvpn              : 7100-7300"
+echo -e GANTIKAN DOMAIN DENGAN IP UNTUK DOWNLOAD FILE
 echo -e "==============================="
 echo -e "PAYLOAD SSH WS"
 echo -e "GET / HTTP/1.1[crlf]Host:"

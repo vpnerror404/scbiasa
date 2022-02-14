@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script by : Harithwyd
+# Script by : naikstore
 #!/bin/bash
 clear
 MAX=1
@@ -19,7 +19,7 @@ if [ $OS -eq 2 ]; then
 	service sshd restart > /dev/null 2>&1;
 fi
 	service dropbear restart > /dev/null 2>&1;
-				
+
 if [[ ${1+x} ]]; then
         MAX=$1;
 fi

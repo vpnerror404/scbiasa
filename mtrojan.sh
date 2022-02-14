@@ -20,6 +20,7 @@ echo -e  "  ║  [ 1 ] Create Trojan Account"
 echo -e  "  ║  [ 2 ] Delete Trojan Account"
 echo -e  "  ║  [ 3 ] Extend Trojan Account Active Life"
 echo -e  "  ║  [ 4 ] Check User Login Trojan"
+echo -e  "  ║  [ 5 ] Generate Trojan Trial Account"
 echo -e  "  ║" | lolcat
 echo -e  "  ╠═══════════════════════════════════════════════╗" | lolcat
 echo -e  "  ║ - CTRL C to cancel                            ║" | lolcat
@@ -39,6 +40,9 @@ case $trojan in
       ;;
       4)
       cek-tr
+			;;
+			5)
+			trial
       ;;
       *)
       echo -e "Please enter an correct number"
